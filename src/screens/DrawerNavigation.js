@@ -6,6 +6,7 @@ import HomeScreen from './HomeScreen';
 import TowerScreen from './TowerScreen';
 import SmsScreen from './SmsScreen';
 import Profile from './Profile';
+import SnapsScreen from './SnapsScreen';
 import { DrawerMenu } from '../components/DrawerMenu';
 const Drawer = createDrawerNavigator();
 
@@ -16,6 +17,7 @@ const DrawerNavigation = () => {
             <Drawer.Screen name="Tower" component={TowerScreen} />
             <Drawer.Screen name="sms" component={SmsScreen} />
             <Drawer.Screen name="profile" component={Profile} />
+            <Drawer.Screen name="snaps" component={SnapsScreen} />
         </Drawer.Navigator>
     )
 }

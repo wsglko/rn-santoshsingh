@@ -1,15 +1,13 @@
 import React,{useEffect, useState} from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Text, Title, Card, Subheading, Button } from 'react-native-paper';
 import axios from 'axios';
 import moment from 'moment';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+
 
 const HomeScreen = ({ navigation }) => {
-    const [user, setUser] = useState("");
-    const [userRole, setUserRole] = useState("");
-    useEffect(() => {
-        
-    }, [])
+    const [loading, setLoading] = useState(false);
     return (
         <View style={styles.container}>
             <Text>Home Page</Text>
