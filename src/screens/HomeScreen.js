@@ -1,16 +1,15 @@
-import React,{useEffect, useState} from 'react';
+import React from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Text, Title, Card, Subheading, Button } from 'react-native-paper';
-import axios from 'axios';
-import moment from 'moment';
-import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
-
-
-const HomeScreen = ({ navigation }) => {
-    const [loading, setLoading] = useState(false);
+import { Provider } from 'react-native-paper';
+import AccountScreen from './AccountScreen';
+const HomeScreen = ({ navigation }) => {    
     return (
         <View style={styles.container}>
-            <Text>Home Page</Text>
+            {/*<Text style={{ fontWeight: 'bold', fontSize: 16, textAlign: 'center' }}>Welcome to Home Page</Text>*/}
+            <Provider>
+                <AccountScreen />
+                </Provider>
         </View>
     )
 }

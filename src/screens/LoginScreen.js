@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, TouchableOpacity, Alert, ActivityIndicator } fr
 import { TextInput, Button } from 'react-native-paper';
 import axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const LoginScreen = ({ navigation }) => {
     const [loading, setLoading] = useState(false);
@@ -45,8 +46,8 @@ const LoginScreen = ({ navigation }) => {
         <View style={styles.container}>
             {loading ? (<Text style={{fontSize:16, textAlign:'center'}}>Please wait login authentication is in-progress!</Text>) : (<Text style={{fontSize:24, textAlign:'center'}}>Please Login!</Text>)}
             {loading ? <ActivityIndicator size="large" color="green" /> : (<>
-                <TextInput value={username} onChangeText={(txt)=>setUsername(txt)} autoCapitalize="none" label="Username" mode="outlined" />
-            <TextInput value={password} onChangeText={(txt)=>setPassword(txt)} secureTextEntry={true} label="Password" mode="outlined" />
+                <TextInput left={<TextInput.Icon name="account-circle"/>} value={username} onChangeText={(txt)=>setUsername(txt)} autoCapitalize="none" label="Username" mode="outlined" />
+            <TextInput left={<TextInput.Icon name="lock"/>} value={password} onChangeText={(txt)=>setPassword(txt)} secureTextEntry={true} label="Password" mode="outlined" />
             <View style={{alignItems:'center', margin:10, flexDirection:'row', justifyContent:'center'}}>
                 <Button style={{ margin: 15 }} mode="contained" color="green" onPress={handleSubmit}>Login</Button>
             </View>
