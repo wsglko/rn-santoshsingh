@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Alert, ActivityIndicator } from 'react-native';
-import { TextInput, Button } from 'react-native-paper';
+import { TextInput, Button, IconButton } from 'react-native-paper';
 import axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const LoginScreen = ({ navigation }) => {
+    const [isSecureText, setSecureText] = useState(true);
     const [loading, setLoading] = useState(false);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -32,9 +33,6 @@ const LoginScreen = ({ navigation }) => {
                 } else {
                     Alert.alert("Username or Password is incorrect");
                 }
-                //console.log(res.data);
-                //console.log(res.data.result);
-                //console.log(res.data.response);
             })
             .catch(e => {
                 console.log(e);
@@ -46,8 +44,8 @@ const LoginScreen = ({ navigation }) => {
         <View style={styles.container}>
             {loading ? (<Text style={{fontSize:16, textAlign:'center'}}>Please wait login authentication is in-progress!</Text>) : (<Text style={{fontSize:24, textAlign:'center'}}>Please Login!</Text>)}
             {loading ? <ActivityIndicator size="large" color="green" /> : (<>
-                <TextInput left={<TextInput.Icon name="account-circle"/>} value={username} onChangeText={(txt)=>setUsername(txt)} autoCapitalize="none" label="Username" mode="outlined" />
-            <TextInput left={<TextInput.Icon name="lock"/>} value={password} onChangeText={(txt)=>setPassword(txt)} secureTextEntry={true} label="Password" mode="outlined" />
+                <TextInput left={<TextInput.Icon name="account-circle"/>} value={username} onChangeText={(txt)=>setUsername(txt)} autoCapitalize="none" label="Username" mode="outlined" keyboardType="email-address" />
+                <TextInput left={<TextInput.Icon name="lock" />} value={password} onChangeText={(txt) => setPassword(txt)} secureTextEntry={isSecureText} label="Password" mode="outlined" right={<TextInput.Icon icon={isSecureText ? "eye" : "eye-off"} onPress={() => { setSecureText((prev) => !prev); }}/> }/>
             <View style={{alignItems:'center', margin:10, flexDirection:'row', justifyContent:'center'}}>
                 <Button style={{ margin: 15 }} mode="contained" color="green" onPress={handleSubmit}>Login</Button>
             </View>
