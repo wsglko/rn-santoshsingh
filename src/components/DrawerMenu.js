@@ -62,6 +62,15 @@ export function DrawerMenu(props) {
                             onPress={()=>{props.navigation.navigate("snaps")}}
                         />
                     </Drawer.Section>
+                    <Drawer.Section style={styles.drawerSection}>
+                        <DrawerItem
+                            icon={({ color, size }) => (
+                                <McIcon name="database" color={color} size={size} />
+                            )}
+                            label="SQLITE"
+                            onPress={()=>{props.navigation.navigate("sqlite")}}
+                        />
+                    </Drawer.Section>
                 </View>
             </DrawerContentScrollView>
             <Drawer.Section style={styles.bottomDrawerSection}>

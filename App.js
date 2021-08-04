@@ -20,26 +20,6 @@ const Auth = () => {
 }
 
 const App = () => {
-/*
-    useEffect(() => {
-          db.transaction(function (txn) {
-              txn.executeSql(
-                  "SELECT name sqlite_master WHERE type='table' AND name='user_session'",
-                  [],
-                  function (tx, res) {
-                      console.log('item:', res.rows.length);
-                      if (res.rows.length == 0) {
-                          txn.executeSql("DROP TABLE IF EXISTS user_session", []);
-                          txn.executeSql(
-                              "CREATE TABLE IF NOT EXISTS user_session(session_id INTEGER PRIMARY KEY AUTOINCREMENT, user_name VARCHAR(100), user_role VARCHAR(20), user_email VARCHAR(100), user_location VARCHAR(50), session_mode VARCHAR(20), session_start VARCHAR(100), session_end VARCHAR(100), update_on VARCHAR(100))",
-                              []
-                          );
-                      }
-                  }
-              );
-          })
-    }, []);
-    */
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="SplashScreen">
