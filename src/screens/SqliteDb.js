@@ -37,7 +37,7 @@ const SqliteDb = ({ navigation }) => {
     useEffect(() => {
         db.transaction(function (txn) {
             txn.executeSql(
-                "SELECT name from sqlite_master WHERE type = 'table' AND name='table_pr'", [],
+                "SELECT name from sqlite_master WHERE type='table' AND name='table_pr'", [],
                 function (tx, res) {
                     console.log("item:", res.rows.length);
                     if (res.rows.length == 0) {
@@ -53,8 +53,8 @@ const SqliteDb = ({ navigation }) => {
     }, []);
     
     const saveData = () => {
-        Alert.alert("Hello!", "Data Save");
-        hideModal();
+        //Alert.alert("Hello!", "Data Save");
+        //hideModal();
         db.transaction(function (tx) {
             tx.executeSql(
                 "INSERT INTO table_pr (pr_cat, pr_des, pr_no) VALUES (?,?,?)",
@@ -63,6 +63,7 @@ const SqliteDb = ({ navigation }) => {
                     console.log("Results", results.rowsAffected);
                     if (results.rowsAffected > 0) {
                         Alert.alert("Success", "Data Saved", [{ text: 'Ok', onPress: () => Alert.alert("Done"), },], { cancelable: false });
+                        hideModal();
                     } else {
                         Alert.alert("Error!", "Data not Saved");
                     }
