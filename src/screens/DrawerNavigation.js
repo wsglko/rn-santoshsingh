@@ -8,6 +8,7 @@ import SmsScreen from './SmsScreen';
 import Profile from './Profile';
 import SnapsScreen from './SnapsScreen';
 import SqliteDb from './SqliteDb';
+import ReactSpinner from './ReactSpinner';
 import { DrawerMenu } from '../components/DrawerMenu';
 const Drawer = createDrawerNavigator();
 
@@ -20,6 +21,7 @@ const DrawerNavigation = () => {
             <Drawer.Screen name="profile" component={Profile} />
             <Drawer.Screen name="snaps" component={SnapsScreen} />
             <Drawer.Screen name="sqlite" component={SqliteDb} />
+            <Drawer.Screen name="spinner" component={ReactSpinner} />
         </Drawer.Navigator>
     )
 }

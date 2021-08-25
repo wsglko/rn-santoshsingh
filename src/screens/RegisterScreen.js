@@ -6,9 +6,9 @@ const RegisterScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Text style={{ fontSize: 24, textAlign: 'center' }}>Please Regiser!</Text>
-            <TextInput label="Email" mode="outlined" />
-            <TextInput label="Username (optional)" mode="outlined" />
-            <TextInput label="Password" mode="outlined" />
+            <TextInput label="Email" mode="outlined" left={<TextInput.Icon name="email" />} />
+            <TextInput label="Username (optional)" mode="outlined" left={<TextInput.Icon name="account-circle" />} />
+            <TextInput label="Password" mode="outlined" left={<TextInput.Icon name="key" />} />
             <View style={{alignItems:'center', margin:10, flexDirection:'row', justifyContent:'center'}}>
                 <Button style={{ margin: 15 }} mode="contained" color="blue">Register</Button>
             </View>

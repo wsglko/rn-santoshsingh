@@ -6,10 +6,10 @@ import AccountScreen from './AccountScreen';
 const HomeScreen = ({ navigation }) => {    
     return (
         <View style={styles.container}>
-            {/*<Text style={{ fontWeight: 'bold', fontSize: 16, textAlign: 'center' }}>Welcome to Home Page</Text>*/}
+            <Button mode="contained" color="green" style={{margin:10, padding:5}} onPress={navigation.navigate("spinner")}>React Spinner</Button>
             <Provider>
                 <AccountScreen />
-                </Provider>
+            </Provider>
         </View>
     )
 }
