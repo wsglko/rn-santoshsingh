@@ -9,6 +9,7 @@ import Profile from './Profile';
 import SnapsScreen from './SnapsScreen';
 import SqliteDb from './SqliteDb';
 import ReactSpinner from './ReactSpinner';
+import Messages from './Mesages';
 import { DrawerMenu } from '../components/DrawerMenu';
 const Drawer = createDrawerNavigator();
 
@@ -22,6 +23,7 @@ const DrawerNavigation = () => {
             <Drawer.Screen name="snaps" component={SnapsScreen} />
             <Drawer.Screen name="sqlite" component={SqliteDb} />
             <Drawer.Screen name="spinner" component={ReactSpinner} />
+            <Drawer.Screen name="mesaages" component={Messages} />
         </Drawer.Navigator>
     )
 }
